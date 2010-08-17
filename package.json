@@ -1,0 +1,13 @@
+{
+  "name": "text",
+  "description": "A collection of utilities for manipulating text.",
+  "version": "0.1.0",
+  "author": "Ben Weaver <ben@orangesoda.net>",
+  "contributors": [],
+  "dependencies": {},
+  "keywords": ["text", "encoding", "base64", "string"],
+  "directories": { "lib": "./lib/text" },
+  "scripts": {},
+  "bin": {},
+  "engines": { "node": ">= 0.1.103" }
+}

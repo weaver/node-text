@@ -1,4 +1,4 @@
-var text = require('../lib/text'),
+var manip = require('../lib/text/manip'),
     assert = require('assert'),
     vows = require('vows');
 
@@ -7,11 +7,11 @@ vows.describe('Text').addBatch({
     topic: function() { return 'Quisque dui lectus, suscipit nec bibendum.'; },
 
     'atMost': function(topic) {
-      assert.equal(text.atMost(topic, 15), 'Quisque dui ');
+      assert.equal(manip.atMost(topic, 15), 'Quisque dui ');
     },
 
     'wraps': function(topic) {
-      assert.deepEqual(text.wrap(topic, 15), ['Quisque dui ', 'lectus, ', 'suscipit nec ', 'bibendum.']);
+      assert.deepEqual(manip.wrap(topic, 15), ['Quisque dui ', 'lectus, ', 'suscipit nec ', 'bibendum.']);
     }
   },
 
@@ -19,15 +19,15 @@ vows.describe('Text').addBatch({
     topic: function() { return 'Lorem ipsum dolor sit amet, Curabituraliquamorcivelestsodalesquisblanditmiscelerisque adipiscing elit.'; },
 
     'atMost': function(topic) {
-      assert.equal(text.atMost(topic), 'Lorem ipsum dolor sit amet, ');
+      assert.equal(manip.atMost(topic), 'Lorem ipsum dolor sit amet, ');
     },
 
     'wraps': function(topic) {
-      assert.deepEqual(text.wrap(topic), ['Lorem ipsum dolor sit amet, ', 'Curabituraliquamorcivelestsodalesquisblanditmiscelerisque adipiscing ', 'elit.']);
+      assert.deepEqual(manip.wrap(topic), ['Lorem ipsum dolor sit amet, ', 'Curabituraliquamorcivelestsodalesquisblanditmiscelerisque adipiscing ', 'elit.']);
     },
 
     'wraps hard': function(topic) {
-      assert.deepEqual(text.wrap(topic, 30, 50), ['Lorem ipsum dolor sit amet, ', 'Curabituraliquamorcivelestsodalesquisblanditmiscel', 'erisque adipiscing elit.']);
+      assert.deepEqual(manip.wrap(topic, 30, 50), ['Lorem ipsum dolor sit amet, ', 'Curabituraliquamorcivelestsodalesquisblanditmiscel', 'erisque adipiscing elit.']);
     }
   },
 
@@ -37,10 +37,10 @@ vows.describe('Text').addBatch({
     'wraps': function(topic) {
 
       function wrap(result, line) {
-        return result.concat(text.wrap(line, 70, 990));
+        return result.concat(manip.wrap(line, 70, 990));
       }
 
-      assert.deepEqual(text.splitLines(topic).reduce(wrap, []), [
+      assert.deepEqual(manip.splitLines(topic).reduce(wrap, []), [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui ',
         'lectus, suscipit nec bibendum et, tristique pretium quam. Curabitur ',
         'ultricies congue felis, sit amet mattis diam varius rutrum. Cras ',
