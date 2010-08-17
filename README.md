@@ -4,7 +4,8 @@ This package is a collection of utilities for manipulating text.
 
 ## Installation ##
 
-Use `npm install text` or add `text` to a folder in your `NODE_PATH`.
+Use `npm install text` or add `lib/text` to a folder in your
+`NODE_PATH`.
 
 ## API ##
 
@@ -29,7 +30,7 @@ Like `decode64`, but assumes the encoding uses `-_` instead of `+/`.
 
 ### Manipulation ###
 
-### splitLines(str) ###
+#### splitLines(str) ####
 
 Return an array of lines in `str` without trailing line delimitors.
 
