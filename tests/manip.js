@@ -1,4 +1,5 @@
-var manip = require('../lib/text/manip'),
+var sys = require('sys'),
+    manip = require('../lib/text/manip'),
     assert = require('assert'),
     vows = require('vows');
 
@@ -40,7 +41,7 @@ vows.describe('Text').addBatch({
         return result.concat(manip.wrap(line, 70, 990));
       }
 
-      assert.deepEqual(manip.splitLines(topic).reduce(wrap, []), [
+      assert.deepEqual(manip.splitLines(topic).reduce(wrap, []) ,[
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui ',
         'lectus, suscipit nec bibendum et, tristique pretium quam. Curabitur ',
         'ultricies congue felis, sit amet mattis diam varius rutrum. Cras ',
@@ -101,7 +102,8 @@ vows.describe('Text').addBatch({
         'gravida ligula. Donec nunc eros, placerat sed volutpat ut, suscipit at ',
         'lectus.',
         'Curabiturmalesuadamolestiemaurisnongravida.Fuscescelerisquedoloraliquamnislconsecteturvarius.Invelviverraelit.Quisquepurusrisus,pulvinaregestasvestibulumin,vehiculabibendumipsum.Integerinarcudolor.Nullaporttitorsemegetnullaimperdieteuismod.Curabiturmaurismagna,sollicitudinsedconvallisnec,vulputatequisnunc.Donecduidui,pulvinarasemperid,vehiculavitaeneque.Donecultricieslectussitametelittristiquerhoncus.Praesentvitaenisilectus.Suspendissevenenatisvelitquisduimalesuadasollicitudin.Donecaelementumlibero.Sedlaciniaultricieslacinia.Vestibulumetmaurisligula.Naminterdumornarecondimentum.Etiamauguevelit,tristiqueetluctuset,vulputateaccumsannisl.Phasellusquiserosinnibhsagittisiaculis.Crasidurnaeuerosultriciesmolestie.Sedquisantecommodoenimdignissimcondimentum.Nullaathendreriturna.Proinviverranisilectus,intristiquelectus.Utvitaeeratmetus.Nullasedsagittismauris.Praesentornarepellentesqueodio,acfermentumnullavehiculaeu.Nuncfacilisis,ipsumasodalessemper,arcuvelitornaresem,idtemporeratjuston',
-        'ecarcu.Vestibulumdapibussagittislectus.Pellentesquehabitantmorbitristiquesenectusetnetusetmalesuadafamesacturpisegestas.Curabituraliquamorcivelestsodalesquisblanditmiscelerisque.Namdiamsem,rutrumidfacilisisid,ultriciesnecpurus.Pellentesqueorcitellus,placeratutluctusac,egestasnonsem.'
+        'ecarcu.Vestibulumdapibussagittislectus.Pellentesquehabitantmorbitristiquesenectusetnetusetmalesuadafamesacturpisegestas.Curabituraliquamorcivelestsodalesquisblanditmiscelerisque.Namdiamsem,rutrumidfacilisisid,ultriciesnecpurus.Pellentesqueorcitellus,placeratutluctusac,egestasnonsem.',
+        ''
       ]);
     }
   }
