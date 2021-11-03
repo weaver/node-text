@@ -3,6 +3,10 @@
   "description": "A collection of utilities for manipulating text.",
   "version": "0.1.0",
   "author": "Ben Weaver <ben@orangesoda.net>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weaver/node-text.git"
+  },
   "contributors": [],
   "dependencies": {},
   "keywords": ["text", "encoding", "base64", "string"],
